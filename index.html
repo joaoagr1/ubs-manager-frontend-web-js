@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Aparecida Nutrição</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="./css/index.css">
+		
+	</head>
+	<body>
+
+	<!-- As a link -->
+	<head>
+		<nav class="navbar navbar-dark bg-primary">
+			<div class="container">
+				<a class="navbar-brand font-weight-bold mx-auto" href="#"><h1>PronTuni</h1></a>
+			</div>
+		</nav>
+	</head>
+	
+  
+  
+
+		<main>
+			
+			
+			
+
+
+			<section class="container">
+				
+				<h2 id="titulo-geral">Meus pacientes</h2>
+				<div id="campo-topo">
+				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o id do paciente">
+				<button id="botao-buscar" class="botao bto-principal">Buscar API</button>
+				<p id="link"><a id="link" target="_blank" href="https://raw.githubusercontent.com/loresgarcia/Pacientes-API/master/pacientes.json">Lista JSON</a></p>
+				</div>
+
+				<table>
+					<thead>
+						<tr>
+							<th>id</th>
+							<th>nome</th>
+							<th>email</th>
+							<th>crm</th>
+							<th>especialidade</th>
+						</tr>
+					</thead>
+					<tbody id="tabela-pacientes">
+						<tr class="paciente" >
+							<td class="info-id" >Paulo</td>
+							<td class="info-nome">100</td>
+							<td class="info-email">2.00</td>
+							<td class="info-crm">10</td>
+							<td class="info-especialidade">0</td>
+						</tr>
+
+						<tr class="paciente" >
+							<td class="info-id">João</td>
+							<td class="info-nome">80</td>
+							<td class="info-email">1.72</td>
+							<td class="info-crm">40</td>
+							<td class="info-especialidade">0</td>
+						</tr>
+
+						<tr class="paciente" >
+							<td class="info-id">Erica</td>
+							<td class="info-nome">54</td>
+							<td class="info-email">1.64</td>
+							<td class="info-crm">14</td>
+							<td class="info-especialidade">0</td>
+						</tr>
+
+						<tr class="paciente">
+							<td class="info-id">Douglas</td>
+							<td class="info-nome">85</td>
+							<td class="info-email">1.73</td>
+							<td class="info-crm">24</td>
+							<td class="info-especialidade">0</td>
+						</tr>
+						<tr class="paciente" >
+							<td class="info-id">Tatiana</td>
+							<td class="info-nome">46</td>
+							<td class="info-email">1.55</td>
+							<td class="info-crm">19</td>
+							<td class="info-especialidade">0</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>* 2 Clicks para remover o paciente</p>
+
+			</section>
+		</main>
+
+		<section class="container">
+			<h2 id="titulo-form">Adicionar novo paciente</h2>
+			<form id="form-adiciona">
+				<div class="">
+					<label for="id">id:</label>
+					<input id="id" name="id" type="text" placeholder="digite o id do seu paciente" class="campo">
+				</div>
+				<div class="grupo">
+					<label for="nome">nome:</label>
+					<input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="campo campo-medio">
+				</div>
+				<div class="grupo">
+					<label for="email">email:</label>
+					<input id="email" name="email" type="text" placeholder="digite a email do seu paciente" class="campo campo-medio">
+				</div>
+				<div class="grupo">
+					<label for="crm">% de crm:</label>
+					<input id="crm" name="crm" type="text" placeholder="digite a porcentagem de crm do seu paciente" class="campo campo-medio">
+				</div>
+				<div id="botao-msg">
+					<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
+					<p id="menssagem-erro"></p>
+				</div>
+			</form>
+		</section>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+		<script src="js/main.js"> </script>
+		<script src="js/form.js"> </script>
+		<script src="js/functions.js"> </script>
+		<script src="js/remover-pacientes.js"> </script>
+		<script src="js/filtra.js"> </script>
+		<script src="js/buscar-pacientes.js"> </script>
+
+
+
+	</body>
+</html>
