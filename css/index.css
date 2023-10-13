@@ -216,5 +216,15 @@ button[disabled=disabled], button:disabled {
 }
 
 
+.tabela{
+	max-height: 400px;
+	overflow-y: scroll;
+}
 
+th{
+	position: sticky;
+	top: 0px;
+	
+
+}
 
