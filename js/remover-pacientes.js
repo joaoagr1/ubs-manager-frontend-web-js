@@ -17,6 +17,23 @@ var tabela = document.querySelector("table");
             paiDoAlvo.remove();// para dar tempo da transição rodar
             idExcluido = event.target.parentNode.querySelector(".info-id").textContent;
             console.log(idExcluido);
+            fetch(`http://localhost:8080/medicos/${idExcluido}`, {
+    method: 'DELETE',
+    headers: {
+        'Content-Type': 'application/json'
+        // Outros cabeçalhos, se necessário
+    },
+})
+.then(response => {
+    if (response.ok) {
+        console.log(`O médico com ID ${idExcluido} foi excluído com sucesso.`);
+    } else {
+        console.error(`Falha ao excluir o médico com ID ${idExcluido}.`);
+    }
+})
+.catch(error => {
+    console.error('Ocorreu um erro durante a exclusão:', error);
+});
             
 
 

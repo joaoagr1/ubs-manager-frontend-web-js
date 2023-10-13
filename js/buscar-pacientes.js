@@ -1,5 +1,4 @@
-var botaoBuscar = document.querySelector("#botao-buscar");
-botaoBuscar.addEventListener("click", function() {
+
     // Objeto do JavaScript capaz de fazer requisições HTTP
     var xhr = new XMLHttpRequest();
 
@@ -17,4 +16,4 @@ botaoBuscar.addEventListener("click", function() {
     });
 
     xhr.send();
-});
+
