@@ -13,12 +13,12 @@ function menssagem(event){
 
     //cria a tr e a td do paciente
     
-    if (!validaPaciente(pacienteobj)) {
-        console.log("paciente inválido");
-        menssagemErro.textContent = "Paciente Inválido " + motivo;
-        form.reset();
-        return ;
-    }
+    // if (!validaPaciente(pacienteobj)) {
+    //     console.log("paciente inválido");
+    //     menssagemErro.textContent = "Paciente Inválido " + motivo;
+    //     form.reset();
+    //     return ;
+    // }
 
     console.log(pacienteobj.nome);
 
@@ -48,24 +48,24 @@ function menssagem(event){
 
     }
 
-    function validaPaciente(pacienteobj) {
-        if(!validanome(pacienteobj.nome) && !validaemail(pacienteobj.email)){
-            motivo = "(nome e email)";
-            return false;
-        }
+    // function validaPaciente(pacienteobj) {
+    //     if(!validanome(pacienteobj.nome) && !validaemail(pacienteobj.email)){
+    //         motivo = "(nome e email)";
+    //         return false;
+    //     }
         
-        if(!validanome(pacienteobj.nome) && validaemail(pacienteobj.email)){
-            motivo = "(nome)";
-            return false
-        }
+    //     if(!validanome(pacienteobj.nome) && validaemail(pacienteobj.email)){
+    //         motivo = "(nome)";
+    //         return false
+    //     }
 
-        if (validanome(pacienteobj.nome) && !validaemail(pacienteobj.email)) {
-            motivo = "(email)";
-            return false
-        }
+    //     if (validanome(pacienteobj.nome) && !validaemail(pacienteobj.email)) {
+    //         motivo = "(email)";
+    //         return false
+    //     }
 
-        return true;        
-    }
+    //     return true;        
+    // }
 
 
     

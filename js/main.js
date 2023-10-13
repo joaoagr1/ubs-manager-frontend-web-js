@@ -17,7 +17,7 @@ for (var i = 0; i < paciente.length; i++) {
     
     especialidadeTd.textContent = especialidade;
     
-    var nomeEhValido = validanome(nome);
+    // var nomeEhValido = validanome(nome);
     var emailEhValida = validaemail(email);
     
 
@@ -46,13 +46,13 @@ for (var i = 0; i < paciente.length; i++) {
 
 }
 
-    function validanome(nome) {
-        if(nome > 5 && nome <= 200){
-            return true;
-        } else {
-            return false
-        }
-    }
+    // function validanome(nome) {
+    //     if(nome > 5 && nome <= 200){
+    //         return true;
+    //     } else {
+    //         return false
+    //     }
+    // }
 
     function validaemail(email) {
         if (email>0 && email<2.5) {

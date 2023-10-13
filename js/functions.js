@@ -50,14 +50,13 @@ function obtemPacienteFormulario(form){
     //extrai informações do form  
     
     var pacienteobj = {
-       // id: form.id.value,
+        id: form.id.value,
         nome: form.nome.value,
         email: form.email.value,
         crm: form.crm.value,
         especialidade: form.especialidade.value}
 
         return pacienteobj;
-        console.log(pacienteobj)
     }
 
    
