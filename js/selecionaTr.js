@@ -25,8 +25,13 @@ trClicada.addEventListener("click", function(event) {
   dadosEdicao.nomeEdicao = paiDoAlvo.querySelector(".info-nome").textContent;
   dadosEdicao.emailEdicao = paiDoAlvo.querySelector(".info-email").textContent;
   dadosEdicao.crmEdicao = paiDoAlvo.querySelector(".info-crm").textContent;
+  dadosEdicao.especialidadeEdicao = paiDoAlvo.querySelector(".info-especialidade").textContent;
+
+  
+
 
   // Agora você tem os dados de edição no objeto "dadosEdicao"
   console.log(dadosEdicao)
+  
 });
 

@@ -244,4 +244,8 @@ tr:hover {
 	background-color: #c0c0c0;
   }
 
-  
+  @media (prefers-reduced-motion: reduce) {
+    .fade {
+        transition: none;
+    }
+}
