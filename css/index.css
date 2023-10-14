@@ -234,3 +234,7 @@ th{
 	padding-bottom: 0px;
 	margin-bottom: 0px;
 }
+
+tr:hover {
+	background-color: #c0c0c0;
+  }

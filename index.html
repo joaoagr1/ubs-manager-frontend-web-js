@@ -31,7 +31,7 @@
 				<div id="campo-topo">
 				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o id do paciente">
 
-				<button type="button" class="btn btn-sm btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="">Adicionar Paciente</button>
+				<button type="button" class="btn btn-sm btn-primary m-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="">Adicionar Paciente</button>
 				
 				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog">
@@ -41,46 +41,50 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					  </div>
 					  <div class="modal-body">
-						<section class="container">
-							<form id="form-adiciona">
-								<div class="">
-									<label for="id" >id:</label>
-									<input id="id" name="id" type="text" placeholder="digite o id do seu paciente" class="campo">
-								</div>
-								<div class="grupo">
-									<label for="nome">nome:</label>
-									<input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="campo campo-medio">
-								</div>
-								
-									<label for="email">email:</label>
-									<input id="email" name="email" type="text" placeholder="digite a email do seu paciente" class="campo campo-medio">
-							
-								<div class="grupo">
-									<label for="crm">crm:</label>
-									<input id="crm" name="crm" type="text" placeholder="digite a porcentagem de crm do seu paciente" class="campo campo-medio">
-								</div>
-								
-									<label for="especialidade">Especialidade</label>
-									<input id="especialidade" name="especialidade" type="text" placeholder="digite a especialidade" class="campo campo-medio">
-								
+						<form id="form-adiciona">
+							<!-- <div class="mb-3">
+								<label for="id">ID:</label>
+								<input id="id" name="id" type="text" placeholder="Digite o ID do paciente" class="form-control">
+							</div> -->
+							<div class="mb-3">
+								<label for="nome">Nome:</label>
+								<input id="nome" name="nome" type="text" placeholder="Digite o nome do paciente" class="form-control">
+							</div>
+							<div class="mb-3">
+								<label for="email">Email:</label>
+								<input id="email" name="email" type="text" placeholder="Digite o email do paciente" class="form-control">
+							</div>
+							<div class="mb-3">
+								<label for="crm">CRM:</label>
+								<input id="crm" name="crm" type="text" placeholder="Digite o CRM do paciente" class="form-control">
+							</div>
+							<div class="mb-3">
+								<label for="especialidade">Especialidade:</label>
+								<input id="especialidade" name="especialidade" type="text" placeholder="Digite a especialidade do paciente" class="form-control">
+							</div>
 					  </div>
-					  <div class="modal-footer">
+					  <div class="modal-footer ">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-						<button type="button" id="adicionar-paciente" class="btn btn-primary">Adicionar</button>
+						<button type="button" id="adicionar-paciente" class="btn btn-primary ">Adicionar</button>
 					  </div>
 					</div>
-				  </div>
 				</div>
+				</div>
+
+
+
+				
+				<!--<p> ja é fora do modal</p> -->
 				</div>
 				<div class="tabela">
 				<table>
 					<thead>
 						<tr>
-							<th>id</th>
-							<th>nome</th>
-							<th>email</th>
-							<th>crm</th>
-							<th>especialidade</th>
+							<th>ID</th>
+							<th>Nome</th>
+							<th>Email</th>
+							<th>CRM</th>
+							<th>Especialidade</th>
 						</tr>
 					</thead>
 					<tbody id="tabela-pacientes">
@@ -88,40 +92,13 @@
 					</tbody>
 				</table>
 			</div>
+				<p>	</p>
 				<p>* 2 Clicks para remover o paciente</p>
 
 			</section>
 		</main>
 
-		<!-- <section class="container">
-			<h2 id="titulo-form">Adicionar novo paciente</h2>
-			<form id="form-adiciona">
-				<div class="">
-					<label for="id">id:</label>
-					<input id="id" name="id" type="text" placeholder="digite o id do seu paciente" class="campo">
-				</div>
-				<div class="grupo">
-					<label for="nome">nome:</label>
-					<input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="campo campo-medio">
-				</div>
-				<div class="grupo">
-					<label for="email">email:</label>
-					<input id="email" name="email" type="text" placeholder="digite a email do seu paciente" class="campo campo-medio">
-				</div>
-				<div class="grupo">
-					<label for="crm">% de crm:</label>
-					<input id="crm" name="crm" type="text" placeholder="digite a porcentagem de crm do seu paciente" class="campo campo-medio">
-				</div>
-				<div class="grupo">
-					<label for="especialidade">Especialidade</label>
-					<input id="especialidade" name="especialidade" type="text" placeholder="digite a especialidade" class="campo campo-medio">
-				</div>
-				<div id="botao-msg">
-					<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
-					<p id="menssagem-erro"></p>
-				</div>
-			</form>
-		</section> -->
+		
 
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
