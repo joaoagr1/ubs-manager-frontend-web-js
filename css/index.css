@@ -213,6 +213,7 @@ button[disabled=disabled], button:disabled {
 .navbar{
 	height: 70px;
 	font-size: large;
+	background-color: #5BB4FF;
 }
 
 
@@ -238,3 +239,9 @@ th{
 tr:hover {
 	background-color: #c0c0c0;
   }
+
+  .selecionada{
+	background-color: #c0c0c0;
+  }
+
+  
