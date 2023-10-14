@@ -1,82 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
-		<title>Aparecida Nutrição</title>
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" href="css/reset.css">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">		<link rel="stylesheet" type="text/css" href="css/index.css">
-		<link rel="stylesheet" type="text/css" href="./css/index.css">
-		
-	</head>
-	<body>
 
-	<!-- As a link -->
+<head>
+	<meta charset="UTF-8">
+	<title>Aparecida Nutrição</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+
+</head>
+
+<body>
+
 	<head>
 		<nav class="navbar navbar-dark">
 			<div class="container">
-				<a class="navbar-brand font-weight-bold mx-auto" href="#"><h1>PronTuni</h1></a>
+				<a class="navbar-brand font-weight-bold mx-auto" href="#">
+					<h1>PronTuni</h1>
+				</a>
 			</div>
 		</nav>
 	</head>
+
+
 	
-  
-  
+	<main>
+		<section class="container">
+			<div id="campo-topo">
+				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente">
 
-		<main>
-			
-			<section class="container">
-				
-				
-				<div id="campo-topo">
-				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o id do paciente">
+				<button type="button" class="btn btn-sm btn-primary m-2" data-bs-toggle="modal"
+					data-bs-target="#exampleModal" data-bs-whatever="">Adicionar Paciente</button>
 
-				<button type="button" class="btn btn-sm btn-primary m-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="">Adicionar Paciente</button>
-				
-				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				  <div class="modal-dialog">
-					<div class="modal-content">
-					  <div class="modal-header">
-						<h1 class=" fs-5" id="exampleModalLabel">Cadastro:</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					  </div>
-					  <div class="modal-body">
-						<form id="form-adiciona">
-							<!-- <div class="mb-3">
-								<label for="id">ID:</label>
-								<input id="id" name="id" type="text" placeholder="Digite o ID do paciente" class="form-control">
-							</div> -->
-							<div class="mb-3">
-								<label for="nome">Nome:</label>
-								<input id="nome" name="nome" type="text" placeholder="Digite o nome do paciente" class="form-control">
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class=" fs-5" id="exampleModalLabel">Cadastro:</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
 							</div>
-							<div class="mb-3">
-								<label for="email">Email:</label>
-								<input id="email" name="email" type="text" placeholder="Digite o email do paciente" class="form-control">
+							<div class="modal-body">
+								<form id="form-adiciona">
+
+									<div class="mb-3">
+										<label for="nome">Nome:</label>
+										<input id="nome" name="nome" type="text" placeholder="Digite o nome do paciente"
+											class="form-control">
+									</div>
+									<div class="mb-3">
+										<label for="email">Email:</label>
+										<input id="email" name="email" type="text"
+											placeholder="Digite o email do paciente" class="form-control">
+									</div>
+									<div class="mb-3">
+										<label for="crm">CRM:</label>
+										<input id="crm" name="crm" type="text" placeholder="Digite o CRM do paciente"
+											class="form-control">
+									</div>
+									<div class="mb-3">
+										<label for="especialidade">Especialidade:</label>
+										<input id="especialidade" name="especialidade" type="text"
+											placeholder="Digite a especialidade do paciente" class="form-control">
+									</div>
 							</div>
-							<div class="mb-3">
-								<label for="crm">CRM:</label>
-								<input id="crm" name="crm" type="text" placeholder="Digite o CRM do paciente" class="form-control">
+							<div class="modal-footer ">
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">Cancelar</button>
+								<button type="button" id="adicionar-paciente"
+									class="btn btn-primary ">Adicionar</button>
 							</div>
-							<div class="mb-3">
-								<label for="especialidade">Especialidade:</label>
-								<input id="especialidade" name="especialidade" type="text" placeholder="Digite a especialidade do paciente" class="form-control">
-							</div>
-					  </div>
-					  <div class="modal-footer ">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-						<button type="button" id="adicionar-paciente" class="btn btn-primary ">Adicionar</button>
-					  </div>
+						</div>
 					</div>
 				</div>
-				</div>
 
 
 
-				
+
 				<!--<p> ja é fora do modal</p> -->
-				</div>
-				<div class="tabela">
+			</div>
+			<div class="tabela">
 				<table>
 					<thead>
 						<tr>
@@ -88,28 +95,23 @@
 						</tr>
 					</thead>
 					<tbody id="tabela-pacientes">
-						
+
 					</tbody>
 				</table>
 			</div>
-				<p>	</p>
-				<p>* 2 Clicks para remover o paciente</p>
-
-			</section>
-		</main>
-
-		
-
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		</section>
+	</main>
 
 
-<footer class="navbar navbar-dark bg-dark fixed-bottom">
-    <div class="container">
-     
-    </div>
-</footer>
 
+
+	<footer id="rodape" class="navbar navbar-dark bg-dark fixed-bottom">
+		<div class="container">
+
+		</div>
+	</footer>
+
+	<section id="scrips">
 		<script src="js/main.js"> </script>
 		<script src="js/form.js"> </script>
 		<script src="js/functions.js"> </script>
@@ -118,9 +120,14 @@
 		<script src="js/buscar-pacientes.js"> </script>
 		<script src="js/modal.js"> </script>
 		<script src="js/selecionaTr.js"> </script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	</section>
 
 
+</body>
 
-	</body>
 </html>
