@@ -15,14 +15,19 @@ var dadosEdicao = {};
 
 
 botaoEditar = document.querySelector("#botao-editar")
+botaoExcluir = document.querySelector("#botao-excluir")
 
 
 botaoEditar.disabled = true;
+botaoExcluir.disabled = true;
+
 
 
 trClicada.addEventListener("click", function(event) {
   // Remove a classe "selecionada" de todas as <tr> em "tabela-pacientes".
   botaoEditar.disabled = false;
+  botaoExcluir.disabled = false;
+
 
   var trs = tabelaPacientes.querySelectorAll("tr");
   trs.forEach(function(tr) {
@@ -55,6 +60,8 @@ document.addEventListener('click', function(event) {
 
     
     botaoEditar.disabled = true;
+    botaoExcluir.disabled = true;
+
 
 
     var trs = tabelaPacientes.querySelectorAll("tr");
