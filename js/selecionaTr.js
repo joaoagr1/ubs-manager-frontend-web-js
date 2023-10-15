@@ -49,7 +49,10 @@ trClicada.addEventListener("click", function(event) {
 
 
   // Agora você tem os dados de edição no objeto "dadosEdicao"
-  console.log(dadosEdicao)
+ // console.log(dadosEdicao)
+
+console.log( dadosEdicao.idEdicao)
+
   
 });
 
@@ -68,7 +71,6 @@ document.addEventListener('click', function(event) {
   trs.forEach(function(tr) {
     tr.classList.remove("selecionada");
   });
-    console.log('Clique em qualquer elemento da página, exceto tabelas');
   }
 });
 
@@ -82,3 +84,16 @@ function isTableOrDescendantOfTable(element) {
   }
   return false; // Não é uma tabela nem pertence a uma tabela
 }
+
+
+
+
+
+
+
+
+
+
+
+  
+
