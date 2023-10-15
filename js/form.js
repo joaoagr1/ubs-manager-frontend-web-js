@@ -70,5 +70,26 @@ function menssagem(event){
     
 
 
+    var botao = document.querySelector("#confirmar-paciente");
+    botao.addEventListener("click", function(event) {
+      
 
+      console.log("chegou aqui");
+
+      novoValorNome = document.getElementById('nome-editar').value;
+      console.log(novoValorNome);
+
+      novoValorEmail = document.getElementById('email-editar').value;
+      console.log(novoValorEmail);
+
+      novoValorCrm = document.getElementById('crm-editar').value;
+      console.log(novoValorCrm);
+
+      novoValorEspecialidade = document.getElementById('especialidade-editar').value;
+      console.log(novoValorEspecialidade);
+
+
+
+    });
+    
     
