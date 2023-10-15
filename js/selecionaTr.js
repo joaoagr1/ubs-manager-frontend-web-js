@@ -6,11 +6,24 @@ let crmEdicao;
 var trClicada = document.querySelector(".tabela");
 var tabelaPacientes = document.getElementById("tabela-pacientes");
 
+
 // Crie um objeto vazio para armazenar os dados de edição
 var dadosEdicao = {};
 
+
+
+
+
+botaoEditar = document.querySelector("#botao-editar")
+
+
+botaoEditar.disabled = true;
+
+
 trClicada.addEventListener("click", function(event) {
   // Remove a classe "selecionada" de todas as <tr> em "tabela-pacientes".
+  botaoEditar.disabled = false;
+
   var trs = tabelaPacientes.querySelectorAll("tr");
   trs.forEach(function(tr) {
     tr.classList.remove("selecionada");
@@ -35,3 +48,30 @@ trClicada.addEventListener("click", function(event) {
   
 });
 
+
+document.addEventListener('click', function(event) {
+  if (!isTableOrDescendantOfTable(event.target)) {
+    // Aqui você pode realizar a ação desejada para elementos fora das tabelas
+
+    
+    botaoEditar.disabled = true;
+
+
+    var trs = tabelaPacientes.querySelectorAll("tr");
+  trs.forEach(function(tr) {
+    tr.classList.remove("selecionada");
+  });
+    console.log('Clique em qualquer elemento da página, exceto tabelas');
+  }
+});
+
+// Função para verificar se o elemento ou seus ancestrais são tabelas
+function isTableOrDescendantOfTable(element) {
+  while (element) {
+    if (element.tagName === 'TABLE') {
+      return true; // O elemento é uma tabela
+    }
+    element = element.parentElement; // Verifique o ancestral seguinte
+  }
+  return false; // Não é uma tabela nem pertence a uma tabela
+}
