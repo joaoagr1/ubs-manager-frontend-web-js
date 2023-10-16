@@ -253,3 +253,8 @@ tr:hover {
 tr{
 	cursor: pointer;
 }
+
+
+.btn-success{
+	margin-left: 310px;
+}
