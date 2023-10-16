@@ -14,15 +14,25 @@ function menssagem(event){
     console.log(resultado.nome)
     if(resultado.nome == false){
       console.log("insira um nome válido")
+      var menssagemErro = document.querySelector("#menssagem-erro");
+      menssagemErro.textContent = "Insira um Nome Válido";
+      form.reset();
     }
     else if(resultado.email == false){
       console.log("insira um email valido")
+      menssagemErro = document.querySelector("#menssagem-erro");
+      menssagemErro.textContent = "Insira um Email Válido";
+      form.reset();
     }
     else if(resultado.crm == false){
       console.log("insira um CRM valido")
+      menssagemErro.textContent = "Insira um CRM Válido";
+      form.reset();
     }
     else if(resultado.especialidade == false){
       console.log("Insira uma especialidade valida")
+      menssagemErro.textContent = "Insira uma Especialidade Válida";
+      form.reset();
     }
     
     
@@ -75,6 +85,7 @@ function menssagem(event){
 
     adicionaPacienteNaTabela(pacienteobj)
     form.reset();
+    location.reload();
 
 
     }

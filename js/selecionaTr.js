@@ -88,9 +88,11 @@ function isTableOrDescendantOfTable(element) {
 
 
 
-
-
-
+tr = document.querySelector("tr")
+tr.addEventListener("mouseover", function() {
+  // Quando o mouse passa por cima, você pode adicionar qualquer ação desejada aqui
+  // Por exemplo, muda a cor de fundo
+});
 
 
 
