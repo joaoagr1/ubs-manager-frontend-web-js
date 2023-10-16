@@ -20,6 +20,7 @@ botaoExcluir = document.querySelector("#botao-excluir")
 
 botaoEditar.disabled = true;
 botaoExcluir.disabled = true;
+botaoDetalhes.disabled = true;
 
 
 
@@ -27,6 +28,7 @@ trClicada.addEventListener("click", function(event) {
   // Remove a classe "selecionada" de todas as <tr> em "tabela-pacientes".
   botaoEditar.disabled = false;
   botaoExcluir.disabled = false;
+  botaoDetalhes.disabled = false
 
 
   var trs = tabelaPacientes.querySelectorAll("tr");
@@ -45,13 +47,17 @@ trClicada.addEventListener("click", function(event) {
   dadosEdicao.crmEdicao = paiDoAlvo.querySelector(".info-crm").textContent;
   dadosEdicao.especialidadeEdicao = paiDoAlvo.querySelector(".info-especialidade").textContent;
 
-  
+  //jogar aqui para a pagina de perfil/detalhes
+
+      var nomeDetalhe = document.querySelector("#nome-detalhe");
+      //nomeDetalhe.textContent = dadosEdicao.nomeEdicao;
+      nomeDetalhe = dadosEdicao.nomeEdicao
 
 
   // Agora você tem os dados de edição no objeto "dadosEdicao"
- // console.log(dadosEdicao)
-
-console.log( dadosEdicao.idEdicao)
+  console.log(dadosEdicao.nomeEdicao)
+  console.log(dadosEdicao)
+  console.log( dadosEdicao.idEdicao)
 
   
 });
@@ -64,6 +70,7 @@ document.addEventListener('click', function(event) {
     
     botaoEditar.disabled = true;
     botaoExcluir.disabled = true;
+    botaoDetalhes.disabled = true
 
 
 
@@ -99,3 +106,20 @@ tr.addEventListener("mouseover", function() {
 
   
 
+//var nomeDetalhe = document.querySelector("#nome-detalhe");
+      //nomeDetalhe.textContent = dadosEdicao.nomeEdicao;
+     // nomeDetalhe = dadosEdicao.nomeEdicao
+
+
+
+
+     botaoExcluir.addEventListener("click", function() {
+      // Coloque aqui o código a ser executado quando o botão for clicado
+      alert(pacientes.idEdicao);
+  });
+
+
+    //  var alvoEvento = event.target;
+    //  var paiDoAlvo = alvoEvento.parentNode;
+
+    //  dadosEdicao.idEdicao = paiDoAlvo.querySelector(".info-id").textContent;

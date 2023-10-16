@@ -11,10 +11,13 @@ var tabela = document.querySelector("table");
         var paiDoAlvo = alvoEvento.parentNode; 
         var confirmacao = confirm("Tem certeza de que deseja excluir este elemento?");
 
+        console.log(dadosEdicao.idEdicao + "chegou aqui")
+
     if (confirmacao) {
         paiDoAlvo.classList.add("fadeOut"); //colocou a classe nele que vai ter essa transição ao remover
         setTimeout(function(){ //coloca um tempo antes de realizar a ação de remover 
             paiDoAlvo.remove();// para dar tempo da transição rodar
+            
             idExcluido = event.target.parentNode.querySelector(".info-id").textContent;
             console.log(idExcluido);
             fetch(`http://localhost:8080/medicos/${idExcluido}`, {

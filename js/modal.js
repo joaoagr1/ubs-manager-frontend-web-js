@@ -17,9 +17,6 @@ meuBotao.addEventListener('click', function(event) {
   event.preventDefault();
 });
 
-
-
-
 const editarModal = document.getElementById('editarModal')
 if (editarModal) {
   editarModal.addEventListener('show.bs.modal', event => {
