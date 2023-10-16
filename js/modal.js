@@ -108,6 +108,8 @@ const url = 'http://localhost:8080/medicos'; // URL do servidor
     .catch(error => {
       console.error('Erro na requisição PUT:', error);
     });
+
+    location.reload();
 });
 
 
