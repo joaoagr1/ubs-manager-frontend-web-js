@@ -115,7 +115,41 @@ tr.addEventListener("mouseover", function() {
 
      botaoExcluir.addEventListener("click", function() {
       // Coloque aqui o código a ser executado quando o botão for clicado
-      alert(pacientes.idEdicao);
+
+      var confirmaExclusao = window.confirm("Você tem certeza de que deseja continuar?");
+      if (confirmaExclusao) {
+
+        fetch(`http://localhost:8080/medicos/${dadosEdicao.idEdicao}`, {
+    method: 'DELETE',
+    headers: {
+        'Content-Type': 'application/json'
+        // Outros cabeçalhos, se necessário
+    },
+})
+.then(response => {
+    if (response.ok) {
+        console.log(`O médico com ID ${dadosEdicao.idEdicao} foi excluído com sucesso.`);
+        location.reload();
+    } else {
+        console.error(`Falha ao excluir o médico com ID ${dadosEdicao.idEdicao}.`);
+    }
+})
+.catch(error => {
+    console.error('Ocorreu um erro durante a exclusão:', error);
+});
+            
+
+
+      
+
+  
+
+
+        console.log(dadosEdicao.idEdicao + "excluido")
+
+        
+      }
+
   });
 
 
@@ -123,3 +157,7 @@ tr.addEventListener("mouseover", function() {
     //  var paiDoAlvo = alvoEvento.parentNode;
 
     //  dadosEdicao.idEdicao = paiDoAlvo.querySelector(".info-id").textContent;
+
+
+
+    
