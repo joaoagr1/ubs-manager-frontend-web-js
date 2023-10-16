@@ -1,3 +1,4 @@
+
 var botao = document.querySelector("#adicionar-paciente");
 botao.addEventListener("click", menssagem);
 
@@ -6,9 +7,31 @@ function menssagem(event){
     
     var form = document.querySelector("#form-adiciona");
     var pacienteobj = obtemPacienteFormulario(form);
+
+
+    const resultado = validarMedico(pacienteobj.nome, pacienteobj.email, pacienteobj.crm, pacienteobj.especialidade);
+
+    console.log(resultado.nome)
+    if(resultado.nome == false){
+      console.log("insira um nome válido")
+    }
+    else if(resultado.email == false){
+      console.log("insira um email valido")
+    }
+    else if(resultado.crm == false){
+      console.log("insira um CRM valido")
+    }
+    else if(resultado.especialidade == false){
+      console.log("Insira uma especialidade valida")
+    }
+    
+    
+    else{
+    
+
     nomeAdicionado = pacienteobj.nome;
   //  console.log(nomeAdicionado);
-    emailAdicionado = pacienteobj.email;
+    emailAdicionado = pacienteobj.nome;
  //   console.log(pacienteobj.email);
     crmAdicionado = pacienteobj.crm;
    // console.log(pacienteobj.crm);
@@ -55,7 +78,7 @@ function menssagem(event){
 
 
     }
-
+  }
     
     function adicionaPacienteNaTabela(pacienteobj){
         var pacienteTr = montaTr(pacienteobj);
@@ -92,3 +115,45 @@ function menssagem(event){
     });
     
     
+
+     function validarMedico(nome, email, crm, especialidade) {
+    // Expressão regular para validar o nome (somente letras)
+    const nomeRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s']+$/;
+  
+    // Expressão regular para validar o email (padrão email)
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+  
+    // Expressão regular para validar o CRM (somente números e máximo de 6 dígitos)
+    const crmRegex = /^\d{1,6}$/;
+  
+    // Lista de especialidades permitidas
+    const especialidadesPermitidas = [
+      "CARDIOLOGIA",
+      "GINECOLOGIA",
+      "DERMATOLOGIA",
+      "PEDIATRIA",
+      "ORTOPEDIA"
+    ];
+  
+    // Verifique se as entradas correspondem às expressões regulares e se a especialidade está na lista permitida
+    const nomeValido = nomeRegex.test(nome);
+    const emailValido = emailRegex.test(email);
+    const crmValido = crmRegex.test(crm);
+    const especialidadeValida = especialidadesPermitidas.includes(especialidade);
+  
+    return {
+      nome: nomeValido,
+      email: emailValido,
+      crm: crmValido,
+      especialidade: especialidadeValida,
+    };
+  }
+  
+  // Exemplo de uso:
+//   const resultado = validarMedico("Dr. José", "jose@example.com", "123456", "CARDIOLOGIA");
+//   console.log(resultado);
+//   if(!resultado.nome){
+//     console.log("nome invalido bro");
+//   }
+
+  
