@@ -171,14 +171,34 @@ tr.addEventListener("mouseover", function() {
 var botaoDetalhes = document.getElementById("botao-detalhes");
 
 botaoDetalhes.addEventListener("click", function() {
-  botaoDetalhes.addEventListener("click", function() {
-    
-    // Armazena os dados no localStorage antes do redirecionamento
-    localStorage.setItem("detalheStorage", dadosEdicao.idEdicao);
-    
-    // Redireciona para a página desejada
-    window.location.href = "http://127.0.0.1:5503/detalhes.html";
+  // Armazena os dados no localStorage antes do redirecionamento
+  localStorage.setItem("detalheStorage", dadosEdicao.idEdicao);
+
+  // Redireciona para a página desejada
+  window.location.href = "http://127.0.0.1:5503/detalhes.html";
 });
 
+// Fora do manipulador de eventos de clique
+// Agora a chamada para a API fetch está fora do evento de clique
+fetch(`http://localhost:8080/medicos/${dadosEdicao.idEdicao}`, {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json', // Defina os cabeçalhos apropriados, se necessário
+    // Outros cabeçalhos, se necessário
+  },
+})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Não foi possível obter os dados.');
+    }
+    return response.text(); // Se a resposta for JSON
+    // Se a resposta não for JSON, use response.text() ou response.blob(), dependendo do tipo de resposta.
+  })
+  .then(data => {
+    // Faça algo com os dados recebidos, por exemplo, exiba no console
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Ocorreu um erro:', error);
+  });
 
-});
