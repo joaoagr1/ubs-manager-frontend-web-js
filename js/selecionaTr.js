@@ -8,7 +8,7 @@ var tabelaPacientes = document.getElementById("tabela-pacientes");
 
 
 // Crie um objeto vazio para armazenar os dados de edição
-var dadosEdicao = {};
+let dadosEdicao = {};
 
 
 
@@ -47,6 +47,9 @@ trClicada.addEventListener("click", function(event) {
   dadosEdicao.crmEdicao = paiDoAlvo.querySelector(".info-crm").textContent;
   dadosEdicao.especialidadeEdicao = paiDoAlvo.querySelector(".info-especialidade").textContent;
 
+
+
+
   //jogar aqui para a pagina de perfil/detalhes
 
       var nomeDetalhe = document.querySelector("#nome-detalhe");
@@ -60,6 +63,8 @@ trClicada.addEventListener("click", function(event) {
   console.log( dadosEdicao.idEdicao)
 
   
+  localStorage.setItem("detalheStorage", dadosEdicao);
+
 });
 
 
@@ -160,4 +165,20 @@ tr.addEventListener("mouseover", function() {
 
 
 
+    var botaoDetalhes = document.getElementById("botao-detalhes");
+
+// Adiciona um ouvinte de evento de clique
+var botaoDetalhes = document.getElementById("botao-detalhes");
+
+botaoDetalhes.addEventListener("click", function() {
+  botaoDetalhes.addEventListener("click", function() {
     
+    // Armazena os dados no localStorage antes do redirecionamento
+    localStorage.setItem("detalheStorage", dadosEdicao.idEdicao);
+    
+    // Redireciona para a página desejada
+    window.location.href = "http://127.0.0.1:5503/detalhes.html";
+});
+
+
+});
