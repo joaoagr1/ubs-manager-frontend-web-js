@@ -79,7 +79,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <p class="mb-0">Full Name</p>
+                      <p class="mb-0">Nome Completo</p>
                     </div>
                     <div class="col-sm-9">
                       <p id="nome-detalhe" class="text-muted mb-0">Johnatan Smith</p>
@@ -97,7 +97,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <p class="mb-0">Phone</p>
+                      <p class="mb-0">CRM</p>
                     </div>
                     <div class="col-sm-9">
                       <p id="crm-detalhe" class="text-muted mb-0">(097) 234-5678</p>
@@ -106,7 +106,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <p class="mb-0">Mobile</p>
+                      <p class="mb-0">Especialidade</p>
                     </div>
                     <div class="col-sm-9">
                       <p id="especialidade-detalhe" class="text-muted mb-0">(098) 765-4321</p>
@@ -115,10 +115,10 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <p class="mb-0">Address</p>
+                      <p class="mb-0">Endereço</p>
                     </div>
                     <div class="col-sm-9">
-                      <p id="nome-detalhe" class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                      <p id="nome-detalhe" class="text-muted mb-0"></p>
                     </div>
                   </div>
                 </div>
@@ -221,6 +221,37 @@
   .then(data => {
     // Faça algo com os dados recebidos, por exemplo, exiba no console
     console.log(data);
+
+    data = data.replace("Medico(", "");
+    data = data.replace(")", "");
+    data = data.split(', ');
+    console.log(data)
+
+    var jsonObject = {};
+
+    for (var i = 0; i < data.length; i++) {
+  var pair = data[i].split('=');
+  var key = pair[0];
+  var value = pair[1];
+  jsonObject[key] = value;
+}
+
+// Converter o objeto JSON em uma string JSON válida
+var jsonString = JSON.stringify(jsonObject);
+
+console.log(jsonString);
+
+console.log(jsonObject)
+
+document.querySelector('#nome-detalhe').textContent = jsonObject.nome;
+document.querySelector('#email-detalhe').textContent = jsonObject.email;
+document.querySelector('#crm-detalhe').textContent = jsonObject.crm;
+document.querySelector('#especialidade-detalhe').textContent = jsonObject.especialidade;
+document.querySelector('#endereço-detalhe').textContent = jsonObject.endereço;
+
+
+
+
   })
   .catch(error => {
     console.error('Ocorreu um erro:', error);
@@ -234,3 +265,6 @@
     </script>
     </body>
 </html>
+
+
+
