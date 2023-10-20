@@ -78,38 +78,11 @@ function clicarForaTabelaHandler(event) {
 document.addEventListener("click", clicarForaTabelaHandler);
 
 // Função para verificar se o elemento ou seus ancestrais são tabelas
-function isTableOrDescendantOfTable(element) {
-  while (element) {
-    if (element.tagName === "TABLE") {
-      return true; // O elemento é uma tabela
-    }
-    element = element.parentElement; // Verifique o ancestral seguinte
-  }
-  return false; // Não é uma tabela nem pertence a uma tabela
-}
+
 
 // Evento de clique no botão Excluir
 botaoExcluir.addEventListener("click", () => {
-  const confirmaExclusao = window.confirm("Você tem certeza de que deseja continuar?");
-  if (confirmaExclusao) {
-    fetch(`http://localhost:8080/medicos/${dadosEdicao.idEdicao}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log(`O médico com ID ${dadosEdicao.idEdicao} foi excluído com sucesso.`);
-          location.reload();
-        } else {
-          console.error(`Falha ao excluir o médico com ID ${dadosEdicao.idEdicao}.`);
-        }
-      })
-      .catch((error) => {
-        console.error("Ocorreu um erro durante a exclusão:", error);
-      });
-  }
+  requisicaoDelete();
 });
 
 // Evento de clique no botão Detalhes

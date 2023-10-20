@@ -69,8 +69,8 @@ botaoAdicionarPaciente.addEventListener("click", function(event) {
   
 
 
-    var botao = document.querySelector("#confirmar-paciente");
-    botao.addEventListener("click", function(event) {
+    var botaoConfirmar = document.querySelector("#confirmar-paciente");
+    botaoConfirmar.addEventListener("click", function(event) {
       
       novoValorNome = document.getElementById('nome-editar').value;
       novoValorEmail = document.getElementById('email-editar').value;

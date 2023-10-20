@@ -78,3 +78,13 @@ function obtemPacienteFormulario(form){
       especialidade: especialidadeValida,
     };
   }
+
+  function isTableOrDescendantOfTable(element) {
+    while (element) {
+      if (element.tagName === "TABLE") {
+        return true; // O elemento é uma tabela
+      }
+      element = element.parentElement; // Verifique o ancestral seguinte
+    }
+    return false; // Não é uma tabela nem pertence a uma tabela
+  }

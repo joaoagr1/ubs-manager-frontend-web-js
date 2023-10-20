@@ -61,6 +61,7 @@ const url = 'http://localhost:8080/medicos'; // URL do servidor
   };
 
 
+
   // Opções para a requisição PUT
   const options = {
     method: 'PUT', // Método HTTP PUT
@@ -71,23 +72,12 @@ const url = 'http://localhost:8080/medicos'; // URL do servidor
   };
 
   // Realize a requisição PUT
-  fetch(url, options)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Erro na requisição PUT');
-      }
-      return response.json(); // Se desejar, você pode analisar a resposta JSON.
-    })
-    .then(data => {
-      console.log('Requisição PUT bem-sucedida:', data);
-    })
-    .catch(error => {
-      console.error('Erro na requisição PUT:', error);
-    });
 
-    location.reload();
+
+  requisicaoPut(url, options);
+
+
 });
-
 
 
 
