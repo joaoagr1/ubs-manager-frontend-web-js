@@ -3,34 +3,12 @@ function montaTr(pacienteobj){
    var pacienteTr = document.createElement("tr");
    pacienteTr.classList.add("paciente");  
 
-   /* var idTd = document.createElement("td");
-   idTd.classList.add("info-id");
-   idTd.textContent = pacienteobj.id; */
-     var idTd = montaTd(pacienteobj.id, "info-id");
-
-   /* var nomeTd = document.createElement("td");
-   nomeTd.classList.add("info-nome");
-   nomeTd.textContent = pacienteobj.nome; */
-     var nomeTd = montaTd(pacienteobj.nome, "info-nome")
-
-
-   /* var emailTd= document.createElement("td");
-   emailTd.classList.add("info-email");
-   emailTd.textContent = pacienteobj.email; */
-      var emailTd = montaTd(pacienteobj.email, "info-email")
-
-
-  /*  var crmTd= document.createElement("td");
-   crmTd.classList.add("info-crm");
-   crmTd.textContent = pacienteobj.crm; */
-      var crmTd = montaTd(pacienteobj.crm, "info-crm")
-
-
-  /*  var especialidadeTd= document.createElement("td");
-   especialidadeTd.classList.add("info-mc");
-   especialidadeTd.textContent = pacienteobj.especialidade; */
-     var especialidadeTd = montaTd(pacienteobj.especialidade, "info-especialidade")
    
+    var idTd = montaTd(pacienteobj.id, "info-id");
+    var nomeTd = montaTd(pacienteobj.nome, "info-nome")
+    var emailTd = montaTd(pacienteobj.email, "info-email")
+    var crmTd = montaTd(pacienteobj.crm, "info-crm")
+    var especialidadeTd = montaTd(pacienteobj.especialidade, "info-especialidade")
    
    
    pacienteTr.appendChild(idTd);
@@ -42,13 +20,8 @@ function montaTr(pacienteobj){
    return pacienteTr;
 }
 
-
-
-
  
-function obtemPacienteFormulario(form){
-    //extrai informações do form  
-    
+function obtemPacienteFormulario(form){    
     var pacienteobj = {
         id: form.id.value,
         nome: form.nome.value,
@@ -60,10 +33,48 @@ function obtemPacienteFormulario(form){
     }
 
    
-
     function montaTd(dado,classe) {
         var td = document.createElement("td");
         td.textContent = dado;
         td.classList.add(classe);
         return td;
     }
+
+
+    function adicionaPacienteNaTabela(pacienteobj){
+      var pacienteTr = montaTr(pacienteobj);
+      var tabela = document.querySelector("#tabela-pacientes");
+      tabela.appendChild(pacienteTr);
+  }
+
+
+
+  function validarMedico(nome, email, crm, especialidade) {
+    // Expressão regular para validar o nome (somente letras)
+    const nomeRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s']+$/;
+    // Expressão regular para validar o email (padrão email)
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    // Expressão regular para validar o CRM (somente números e máximo de 6 dígitos)
+    const crmRegex = /^\d{1,6}$/;
+    // Lista de especialidades permitidas
+    const especialidadesPermitidas = [
+      "CARDIOLOGIA",
+      "GINECOLOGIA",
+      "DERMATOLOGIA",
+      "PEDIATRIA",
+      "ORTOPEDIA"
+    ];
+  
+    // Verifique se as entradas correspondem às expressões regulares e se a especialidade está na lista permitida
+    const nomeValido = nomeRegex.test(nome);
+    const emailValido = emailRegex.test(email);
+    const crmValido = crmRegex.test(crm);
+    const especialidadeValida = especialidadesPermitidas.includes(especialidade);
+  
+    return {
+      nome: nomeValido,
+      email: emailValido,
+      crm: crmValido,
+      especialidade: especialidadeValida,
+    };
+  }

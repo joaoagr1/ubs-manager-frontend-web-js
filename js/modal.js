@@ -12,6 +12,7 @@ if (exampleModal) {
   })
 }
 
+
 var meuBotao = document.getElementById('botao-editar');
 meuBotao.addEventListener('click', function(event) {
   event.preventDefault();
@@ -29,18 +30,11 @@ if (editarModal) {
 
     modalBodyInput.value = recipient
 
-
-    
     document.getElementById("nome-editar").value = dadosEdicao.nomeEdicao;
     document.getElementById("email-editar").value = dadosEdicao.emailEdicao;
     document.getElementById("crm-editar").value = dadosEdicao.crmEdicao;
     document.getElementById("especialidade-editar").value = dadosEdicao.especialidadeEdicao;
-
-
   })
-
-
-//document.querySelector("#nome-editar") = dadosEdicao.nomeEdicao 
 }
 
 
@@ -48,25 +42,9 @@ if (editarModal) {
 document.querySelector("#confirmar-paciente").addEventListener('click',function(){
 
 var nomeNovo = document.querySelector("#nome-editar").value;
-console.log(nomeNovo)
-
 var emailNovo = document.querySelector("#email-editar").value;
-console.log(emailNovo)
-
 var crmNovo = document.querySelector("#crm-editar").value;
-console.log(crmNovo)
-
 var especialidadeNovo = document.querySelector("#especialidade-editar").value;
-console.log(especialidadeNovo)
-
-console.log(dadosEdicao.idEdicao)
-
-// dados para passar no json de atualiar:
-// dadosEdicao.idEdicao
-// nomeNovo
-// emailNovo
-// crmNovo
-// especialidadeNovo
 
 
 const url = 'http://localhost:8080/medicos'; // URL do servidor
@@ -81,6 +59,7 @@ const url = 'http://localhost:8080/medicos'; // URL do servidor
     especialidade: especialidadeNovo
 
   };
+
 
   // Opções para a requisição PUT
   const options = {
