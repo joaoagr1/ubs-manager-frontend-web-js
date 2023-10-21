@@ -225,6 +225,12 @@ button[disabled=disabled], button:disabled {
 	overflow-y: scroll;
 }
 
+.tabela-detalhes{
+	min-height: 229px;
+	max-height: 229px;
+	overflow-y: scroll;
+}
+
 th{
 	position: sticky;
 	top: 0px;

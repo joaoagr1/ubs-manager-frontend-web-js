@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="css/reset.css">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="/css/index.css">
 
@@ -53,23 +53,23 @@
               <ul class="list-group list-group-flush rounded-3">
                 <li class="list-group-item d-flex  align-items-center p-3">
                   <i class="fas fa-globe fa-lg text-warning"></i>
-                  <p class="mb-0">Maringá</p>
+                  <p id="cidade" class="mb-0">Maringá</p>
                 </li>
                 <li class="list-group-item d-flex align-items-center p-3">
                   <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-                  <p class="mb-0">Zona 2</p>
+                  <p id="bairro" class="mb-0">Zona 2</p>
                 </li>
                 <li class="list-group-item d-flex  align-items-center p-3">
                   <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                  <p class="mb-0">Avenida São Paulo</p>
+                  <p id="logradouro" class="mb-0">Avenida São Paulo</p>
                 </li>
                 <li class="list-group-item d-flex align-items-center p-3">
                   <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                  <p class="mb-0" 356>356</p>
+                  <p id="numero" class="mb-0" 356>356</p>
                 </li>
                 <li class="list-group-item d-flex align-items-center p-3">
                   <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                  <p class="mb-0">Ap. 23</p>
+                  <p id="complemento" class="mb-0">Ap. 23</p>
                 </li>
               </ul>
             </div>
@@ -116,10 +116,10 @@
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Endereço</p>
+                  <p class="mb-0">Telefone</p>
                 </div>
                 <div class="col-sm-9">
-                  <p id="endereco-detalhe" class="text-muted mb-0"></p>
+                  <p id="telefone-detalhe" class="text-muted mb-0"></p>
                 </div>
               </div>
             </div>
@@ -128,7 +128,7 @@
             <div class="col-md-6">
               <div class="card mb-4 mb-md-0">
                 <div class="card-body">
-                  <div class="tabela">
+                  <div class="tabela-detalhes">
                     <table id="tabelaAlergias" class="">
                       <thead>
                         <tr>
@@ -150,7 +150,7 @@
             <div class="col-md-6">
               <div class="card mb-4 mb-md-0">
                 <div class="card-body">
-                  <div class="tabela">
+                  <div class="tabela-detalhes">
                     <table id="tabelaAlergias" class="">
                       <thead>
                         <tr>
@@ -177,9 +177,9 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    
     crossorigin="anonymous"></script>
-  <script src="js/selecionaTr.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+  <script src="js/selecionaTr.js" 
     crossorigin="anonymous"></script>
   <script>
 
@@ -211,7 +211,15 @@
           document.querySelector('#email-detalhe').textContent = data.email;
           document.querySelector('#crm-detalhe').textContent = data.crm;
           document.querySelector('#especialidade-detalhe').textContent = data.especialidade;
-          document.querySelector('#endereco-detalhe').textContent = data.endereco.bairro;
+          document.querySelector('#telefone-detalhe').textContent = data.telefone;
+          document.querySelector('#cidade').textContent = data.endereco.cidade;
+          document.querySelector('#bairro').textContent = data.endereco.bairro;
+          document.querySelector('#logradouro').textContent = data.endereco.logradouro;
+          document.querySelector('#numero').textContent = data.endereco.numero;
+          document.querySelector('#complemento').textContent = data.endereco.uf;
+
+
+
 
 
 
