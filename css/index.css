@@ -272,7 +272,19 @@ tr{
     max-width: 155px;
 }
 
+#campo-texto-alergias {
+    max-width: 155px;
+}
+
 #botao-muc{
+	max-width: 50px;
+	height: 30px;
+	margin: 0;
+	margin-left: 5px;
+	margin-bottom: 2px;
+}
+
+#botao-alergias{
 	max-width: 50px;
 	height: 30px;
 	margin: 0;
