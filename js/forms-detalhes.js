@@ -134,3 +134,19 @@ botaoExcluirDetalhe.addEventListener("click", function() {
 
 });
 
+botaoAdicionarAlergias.disabled = true
+
+
+var campoTextoAlergias = document.getElementById("campo-texto-alergias");
+ botaoAdicionarAlergias = document.getElementById("botao-alergias");
+
+// Adiciona um ouvinte de evento para o evento "input" no campo de entrada
+campoTextoAlergias.addEventListener("input", function() {
+  // Verifica se o campo de entrada não está vazio
+  if (campoTextoAlergias.value.trim() !== "") {
+    botaoAdicionarAlergias.removeAttribute("disabled"); // Habilita o botão
+  } else {
+    botaoAdicionarAlergias.setAttribute("disabled", "disabled"); // Desabilita o botão
+  }
+});
+
