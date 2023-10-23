@@ -1,8 +1,9 @@
 var botaoAdicionarAlergias = document.querySelector("#botao-alergias");
-var input = document.getElementById("campo-texto-alergias");
 
 botaoAdicionarAlergias.addEventListener("click", function() {
     // Obtém o valor do campo input
+    var input = document.getElementById("campo-texto-alergias");
+
     console.log(input.value);
 
     var alergiaAdicionada = input.value;
@@ -147,6 +148,24 @@ campoTextoAlergias.addEventListener("input", function() {
     botaoAdicionarAlergias.removeAttribute("disabled"); // Habilita o botão
   } else {
     botaoAdicionarAlergias.setAttribute("disabled", "disabled"); // Desabilita o botão
+  }
+});
+
+
+
+botaoAdicionarMuc.disabled = true
+
+
+var campoTextoMuc = document.getElementById("campo-texto-muc");
+ botaoAdicionarMuc = document.getElementById("botao-muc");
+
+// Adiciona um ouvinte de evento para o evento "input" no campo de entrada
+campoTextoMuc.addEventListener("input", function() {
+  // Verifica se o campo de entrada não está vazio
+  if (campoTextoMuc.value.trim() !== "") {
+    botaoAdicionarMuc.removeAttribute("disabled"); // Habilita o botão
+  } else {
+    botaoAdicionarMuc.setAttribute("disabled", "disabled"); // Desabilita o botão
   }
 });
 
