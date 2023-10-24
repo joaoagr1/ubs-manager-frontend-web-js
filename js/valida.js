@@ -13,7 +13,9 @@
       "CARDIOLOGIA",
       "GINECOLOGIA",
       "DERMATOLOGIA",
-      "PEDIATRIA"
+      "PEDIATRIA",
+      "M",
+      "F"
     ];
   
     // Verifique se as entradas correspondem às expressões regulares e se a especialidade está na lista permitida

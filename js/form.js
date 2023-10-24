@@ -143,7 +143,9 @@ function menssagem(event){
       "GINECOLOGIA",
       "DERMATOLOGIA",
       "PEDIATRIA",
-      "ORTOPEDIA"
+      "ORTOPEDIA",
+      "Masculino",
+      "F"
     ];
   
     // Verifique se as entradas correspondem às expressões regulares e se a especialidade está na lista permitida
