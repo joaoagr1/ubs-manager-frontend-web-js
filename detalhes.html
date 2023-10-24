@@ -44,7 +44,7 @@
 
               <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
                 class="rounded-circle img-fluid" style="width: 150px;">
-              <h5 class="my-3">John Smith</h5>
+              <h5 id="primeiro-nome" class="my-3">John Smith</h5>
               <p class="text-muted mb-1"></p>
               <p class="text-muted mb-4"></p>
               <div class="d-flex justify-content-center mb-2">
@@ -237,6 +237,14 @@
           document.querySelector('#logradouro').textContent = "Logradouro: "+ data.endereco.logradouro;
           document.querySelector('#numero').textContent = "Número: "+data.endereco.numero;
           document.querySelector('#complemento').textContent = "UF: "+data.endereco.uf;
+
+          var primeiroNome = data.nome.match(/\S+(?=\s)/);
+  
+
+          console.log(primeiroNome)
+
+          document.querySelector('#primeiro-nome').textContent = primeiroNome;
+
 
 
 
