@@ -13,7 +13,7 @@ let dadosEdicao = {};
 
 
 
-
+var botaoDetalhes = document.getElementById("botao-detalhes");
 botaoEditar = document.querySelector("#botao-editar")
 botaoExcluir = document.querySelector("#botao-excluir")
 
